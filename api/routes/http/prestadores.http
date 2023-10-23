@@ -1,0 +1,58 @@
+@baseURL = http://localhost:4000/api/prestadores
+
+//GET - lista todos os registros
+
+GET {{baseURL}}
+Content-type: application/json
+
+###
+ //GET - lista um resgistro pelo id
+GET {{baseURL}}/id/65086411e780a21320b70091
+Content-type: application/json
+###
+// DELETE - apaga um registro pelo id
+DELETE {{baseURL}}/id/65086411e780a21320b70091
+Content-type: application/json
+
+###
+//POST - inseri um novo registro
+POST {{baseURL}}
+Content-type: application/json
+
+{
+    "cnpj": "45150718000143",
+    "razao_social": "SERVIÇOS MOTOBOY LTDA",
+    "cnae_fiscal": 451510,
+    "nome_fantasia": "MOTOBOY",
+    "data_inicio_atividade": "2020-08-01",
+    "localizacao": {
+        "type": "Point",
+        "coordinates": [-23.2904, -47.2963]
+    }
+}
+
+###
+//PUT altera o registro
+PUT {{baseURL}}
+Content-type: application/json
+
+{
+    "_id": "65086411e780a21320b70091",
+    "cnpj": "13829219823712",
+    "razao_social": "FRANCISCO BIANCHI ENTERPRISE",
+    "cnae_fiscal": 439510,
+    "nome_fantasia": "CHICAO DA IBM",
+    "data_inicio_atividade": "1939-08-01",
+    "localizacao": {
+      "type": "Point",
+      "coordinates": [
+        -53.0533,
+        -67.1023
+      ]
+    }
+}
+
+###
+ //GET - registro pela razao social
+GET {{baseURL}}/razao/alves
+Content-type: application/json

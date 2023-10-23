@@ -1,0 +1,49 @@
+// Teste do endpoint usuarios
+
+@baseURL = http://localhost:4000/api/usuarios
+
+POST {{baseURL}}
+content-Type: application/json
+
+{
+    "nome": "José Ales Silva",
+    "email": "ze@uol.com.br",
+    "senha": "Alun0@"
+    
+}
+
+###
+//efetuar o login
+POST {{baseURL}}/login
+content-Type: application/json
+
+{
+   
+    "nome": "José Ales Silva",
+    "email": "ze@uol.com.br",
+    "senha": "Alun0@"
+    
+}
+
+###
+//GET - obtem os usuarios
+GET {{baseURL}}
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjdhMDYzZjRkYzcxMDBhNjE2NzNkIn0sImlhdCI6MTY5ODA3MjcyMywiZXhwIjoxNjk4MzMxOTIzfQ.U3SKGu3pInZ_DP_OV7tPgFgoWI76bjB0I_MsKFfkOLE
+
+###
+DELETE {{baseURL}}/65367a40362e4883cc8e29c0
+content-type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjUzNjdhMDYzZjRkYzcxMDBhNjE2NzNkIn0sImlhdCI6MTY5ODA3MjcyMywiZXhwIjoxNjk4MzMxOTIzfQ.U3SKGu3pInZ_DP_OV7tPgFgoWI76bjB0I_MsKFfkOLE
+
+###
+PUT {{baseURL}}
+Content-Type: application/json
+
+{
+    "nome": "José Alves Silva ALTERADO",
+    "email": "ze2@uol.com.br",
+    "ativo": true,
+    "tipo": "Cliente",
+    "avatar": "https://ui-avatars.com/api/?name=José+Alves+Silva&background=F00&color=00F"
+}

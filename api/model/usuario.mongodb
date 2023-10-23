@@ -1,0 +1,16 @@
+use('FatecItu')
+db.usuarios.insertOne({
+    'nome' : 'maria rosé',
+    'email' : 'mariarose@uol.co.br',
+    'senha' : '123321',
+    'ativo' : true,
+    'tipo' : 'cliente',
+    'avatar' : 'https://ui-avatars.com/api/?name=maria+rose&background=F00&color=fff'
+})
+
+//criando um indice único
+use('FatecItu')
+db.usuarios.createIndex({'email' :1},{unique:true})
+//exemplo de listagem
+use('FatecItu')
+db.usuarios.find({},{senha:0})
